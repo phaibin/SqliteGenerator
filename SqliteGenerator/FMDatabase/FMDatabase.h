@@ -2,6 +2,8 @@
 #import "sqlite3.h"
 #import "FMResultSet.h"
 
+#define FMDBQuickCheck(SomeBool) { if (!(SomeBool)) { NSLog(@"Failure on line %d", __LINE__); return 123; } }
+
 @interface FMDatabase : NSObject 
 {
 	sqlite3*    db;

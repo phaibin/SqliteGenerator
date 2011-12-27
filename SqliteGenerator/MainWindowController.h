@@ -7,11 +7,18 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "FMDatabase.h"
 
 @interface MainWindowController : NSWindowController
 
 @property (nonatomic, retain) NSMutableArray *tablesArray;
+@property (nonatomic, retain) NSMutableArray *columnsArray;
+@property (assign) IBOutlet NSArrayController *tablesArrayController;
+@property (assign) IBOutlet NSArrayController *columnsArrayController;
+@property (assign) IBOutlet NSTextField *filePathField;
+@property (retain) FMDatabase *db;
 
+- (IBAction)chooseFileClicked:(id)sender;
 - (IBAction)dumpClicked:(id)sender;
 - (IBAction)generateClicked:(id)sender;
 
